@@ -139,7 +139,10 @@ exports.likePost = (req, res, next) => {
       post.usersLiked.push(req.body.userId)
       post.likes += req.body.like
     } else if (req.body.like == 0 && post.usersLiked.includes(req.body.userId)) {
-      post.usersLiked.remove(req.body.userId)
+      //post.usersLiked.remove(req.body.userId)
+      let index = post.usersLiked.findIndex(x => x ==req.body.userId.toString());
+            post.usersLiked.splice(index, 1);
+
       post.likes -= 1
     } 
     post.usersLiked=JSON.stringify(post.usersLiked)

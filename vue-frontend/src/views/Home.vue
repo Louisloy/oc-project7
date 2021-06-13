@@ -295,7 +295,9 @@ export default  {
 			like:1,
 			userId:this.user.id
 		}
-		post.usersLiked=JSON.parse(post.usersLiked)
+		console.log(post.usersLiked)
+		post.usersLiked=JSON.parse(JSON.stringify(post.usersLiked))
+		
 		if(post.usersLiked.includes(this.user.id)){
 			data.like = 0
 			
