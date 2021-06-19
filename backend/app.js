@@ -12,8 +12,6 @@ const db = require('./config/db.config');
 require('dotenv').config();
 
 const postRoutes = require('./routes/post');
-const sauceRoutes = require('./routes/sauce');
-const stuffRoutes = require('./routes/stuff');
 const userRoutes = require('./routes/user');
 
 const app = express();
@@ -40,8 +38,6 @@ app.use((req, res, next) => {
   app.use('/images', express.static(path.join(__dirname, 'images')));
   
   app.use('/api/post', postRoutes);
-  app.use('/api/sauces', sauceRoutes);
-  //app.use('/api/stuff', stuffRoutes);
   app.use('/api/auth', userRoutes);
 
 module.exports = app;
