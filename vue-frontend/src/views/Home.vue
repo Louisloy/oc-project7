@@ -101,7 +101,8 @@
 														<a @click="likePost(post)" href="#"><i class="la la-heart"></i> Like [{{post.likes}}]</a>
 														
 													</li>
-													<ul >
+													<ul v-if="post.userId==user.id" >
+													
 														<li><a :href='"http://localhost:8080/#/edit-post/"+post.id' title="">Edit Post</a></li>
 														<li><a @click="deletePost(post.id)" href="#" title="">Delete Post</a></li>
 														
