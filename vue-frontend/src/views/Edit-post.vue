@@ -37,7 +37,7 @@
 							<div class="col-lg-12">
 								<ul>
 									<li><button class="active" type="submit" value="post">Post</button></li>
-									<li><a href="#" title="">Cancel</a></li>
+									<li><a  @click="cancel" href="#" title="">Cancel</a></li>
 								</ul>
 							</div>
 						</div>
@@ -129,7 +129,7 @@ export default  {
                 alert("Something went wrong, please try again")
 				console.log(err.message)
             })
-	  
+	  this.cancel()
    },
     
    loadPost(){
@@ -148,6 +148,14 @@ export default  {
    mediaSelected(event){
 	   this.form.media = event.target.files[0]
    },
+   cancel(){
+	   let postForm = document.getElementById("post")
+	   let appDiv = document.getElementById("app")
+	   if(postForm != null && appDiv!= null){
+	  postForm.classList.remove("active")
+	  appDiv.classList.remove("overlay")
+	   } 
+  },
   
   }
 }
