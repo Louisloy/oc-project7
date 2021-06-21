@@ -287,7 +287,9 @@ export default  {
 		this.loadAllPosts()
 		
 		//window.location.href="http://localhost:8080/#/"
-	   })
+	   }).catch(function(error) {
+          console.log(error);
+        })
 	 }
     
 	},

@@ -11,6 +11,9 @@ const {Sequelize, DataTypes} = require("sequelize");
     message: {
       type: DataTypes.STRING
     },
+    department: {
+      type: DataTypes.STRING
+    },
     media: {
       type: DataTypes.STRING
     },
